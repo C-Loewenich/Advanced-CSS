@@ -1,0 +1,166 @@
+@import "./constants";
+
+main {
+  position: relative;
+  background-color: $background;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "testimonial"
+    "portfolio";
+  .testimonial {
+    grid-area: testimonial;
+    padding: 5rem 0;
+    .box {
+      box-shadow: $shadow;
+      width: fit-content;
+      height: fit-content;
+      border-radius: 25px;
+      @include center;
+      .box-top {
+        @include boxStyle($topColor, 25px, 0, 350px);
+        p {
+          @include textStyles(20px, $topTextColor);
+          padding: $padding;
+        }
+      }
+      .box-bottom {
+        @include boxStyle($bottomColor, 0, 25px, 175px);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        figure {
+          position: absolute;
+          top: 0;
+          width: 100%;
+          img {
+            display: block;
+            height: 115px;
+            width: 115px;
+            border-radius: 50%;
+            outline: 5px solid $topColor;
+            @include center;
+            transform: translateY(-50%);
+          }
+        }
+        h1 {
+          @include textStyles(20px, $bottomTextColor);
+          padding-top: 1em;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+        h2 {
+          @include textStyles(16px, $emailTextColor);
+        }
+      }
+    }
+  }
+  .portfoliogrid {
+    grid-area: portfolio;
+    padding: 5rem 1rem;
+    max-width: 1200px;
+    @include center;
+    .container {
+      @include grid(
+        repeat(3, 1fr),
+        repeat(3, 1fr),
+        "one two three" "four five six" "seven ... ..."
+      );
+      grid-gap: 1rem;
+      img {
+        width: 100%;
+        height: 100%;
+        transition: transform ease-in 250ms;
+      }
+      .read-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        inset: 0;
+        background-color: $readMoreBackground;
+        opacity: 0;
+        transition: opacity ease-in 250ms;
+        a {
+          text-decoration: none;
+          color: black;
+          font-weight: bold;
+          background-color: $readMoreLinkBackground;
+          height: fit-content;
+          padding: 1em 2em;
+          font-size: 20px;
+          border-radius: 5px;
+        }
+      }
+      .one {
+        @include tiles(one);
+      }
+      .two {
+        @include tiles(two);
+      }
+      .three {
+        @include tiles(three);
+      }
+      .four {
+        @include tiles(four);
+      }
+      .five {
+        @include tiles(five);
+      }
+      .six {
+        @include tiles(six);
+      }
+      .seven {
+        @include tiles(seven);
+      }
+    }
+  }
+
+  .social_media {
+    position: fixed;
+    top: 300px;
+    right: 0;
+    .blog {
+      @include socialMedia(#e17b77);
+    }
+    .twitter {
+      @include socialMedia(#00aced);
+    }
+    .linkedin {
+      @include socialMedia(#007bb6);
+    }
+    .facebook {
+      @include socialMedia(#3b5998);
+    }
+    .github {
+      @include socialMedia(#333);
+    }
+  }
+
+  /* media query*/
+
+  @media (max-width: 1024px) {
+    .portfoliogrid {
+      .container {
+        @include grid(
+          repeat(4, 1fr),
+          repeat(2, 1fr),
+          "one two" "three four" "five six" "seven ..."
+        );
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .portfoliogrid {
+      .container {
+        @include grid(
+          repeat(7, 1fr),
+          repeat(1, 1fr),
+          "one" "two" "three" "four" "five" "six" "seven"
+        );
+      }
+    }
+  }
+}

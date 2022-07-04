@@ -1,0 +1,86 @@
+$background: #c3cfe2;
+
+/* Testimonial */
+$topColor: white;
+$topTextColor: Black;
+$bottomColor: #686de0;
+$bottomTextColor: white;
+$emailTextColor: #c3cfe2c4;
+$padding: 2em;
+$font: "Lato", sans-serif;
+$shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+$readMoreBackground: rgb(63, 63, 63);
+$readMoreLinkBackground: rgb(214, 214, 214);
+$lengthSocalMediaText: 170px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin grid($row, $column, $area) {
+  display: grid;
+  grid-template-rows: $row;
+  grid-template-columns: $column;
+  grid-template-areas: $area;
+}
+
+@mixin center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin boxStyle($color, $top, $bottom, $height) {
+  background-color: $color;
+  border-radius: $top $top $bottom $bottom;
+  height: $height;
+  width: 400px;
+  @include center;
+}
+
+@mixin textStyles($fontSize, $color) {
+  font-family: $font;
+  font-size: $fontSize;
+  line-height: 2em;
+  color: $color;
+  @include center;
+}
+
+@mixin tiles($number) {
+  grid-area: $number;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: $shadow;
+  position: relative;
+  &:hover {
+    .read-more {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin socialMedia($background) {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 60px;
+  width: 230px;
+  transform: translateX($lengthSocalMediaText);
+  background-color: $background;
+  transition: transform 500ms ease-in-out;
+  @include grid(60px, 60px $lengthSocalMediaText, "icon text");
+  i {
+    grid-area: icon;
+    @include center;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  a {
+    grid-area: text;
+    color: white;
+    text-decoration: none;
+  }
+  &:hover {
+    transform: translateX(0);
+  }
+}

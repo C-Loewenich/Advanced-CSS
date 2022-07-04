@@ -1,0 +1,370 @@
+/* Testimonial */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  position: relative;
+  background-color: #c3cfe2;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "testimonial" "portfolio";
+  /* media query*/
+}
+main .testimonial {
+  grid-area: testimonial;
+  padding: 5rem 0;
+}
+main .testimonial .box {
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+main .testimonial .box .box-top {
+  background-color: white;
+  border-radius: 25px 25px 0 0;
+  height: 350px;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+main .testimonial .box .box-top p {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  line-height: 2em;
+  color: Black;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 2em;
+}
+main .testimonial .box .box-bottom {
+  background-color: #686de0;
+  border-radius: 0 0 25px 25px;
+  height: 175px;
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+main .testimonial .box .box-bottom figure {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+main .testimonial .box .box-bottom figure img {
+  display: block;
+  height: 115px;
+  width: 115px;
+  border-radius: 50%;
+  outline: 5px solid white;
+  margin-right: auto;
+  margin-left: auto;
+  transform: translateY(-50%);
+}
+main .testimonial .box .box-bottom h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  line-height: 2em;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+main .testimonial .box .box-bottom h2 {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 2em;
+  color: rgba(195, 207, 226, 0.768627451);
+  margin-right: auto;
+  margin-left: auto;
+}
+main .portfoliogrid {
+  grid-area: portfolio;
+  padding: 5rem 1rem;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+main .portfoliogrid .container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "one two three" "four five six" "seven ... ...";
+  grid-gap: 1rem;
+}
+main .portfoliogrid .container img {
+  width: 100%;
+  height: 100%;
+  transition: transform ease-in 250ms;
+}
+main .portfoliogrid .container .read-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+  background-color: rgb(63, 63, 63);
+  opacity: 0;
+  transition: opacity ease-in 250ms;
+}
+main .portfoliogrid .container .read-more a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: rgb(214, 214, 214);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 1em 2em;
+  font-size: 20px;
+  border-radius: 5px;
+}
+main .portfoliogrid .container .one {
+  grid-area: one;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+main .portfoliogrid .container .one:hover .read-more {
+  opacity: 1;
+}
+main .portfoliogrid .container .two {
+  grid-area: two;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+main .portfoliogrid .container .two:hover .read-more {
+  opacity: 1;
+}
+main .portfoliogrid .container .three {
+  grid-area: three;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+main .portfoliogrid .container .three:hover .read-more {
+  opacity: 1;
+}
+main .portfoliogrid .container .four {
+  grid-area: four;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+main .portfoliogrid .container .four:hover .read-more {
+  opacity: 1;
+}
+main .portfoliogrid .container .five {
+  grid-area: five;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+main .portfoliogrid .container .five:hover .read-more {
+  opacity: 1;
+}
+main .portfoliogrid .container .six {
+  grid-area: six;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+main .portfoliogrid .container .six:hover .read-more {
+  opacity: 1;
+}
+main .portfoliogrid .container .seven {
+  grid-area: seven;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+main .portfoliogrid .container .seven:hover .read-more {
+  opacity: 1;
+}
+main .social_media {
+  position: fixed;
+  top: 300px;
+  right: 0;
+}
+main .social_media .blog {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 60px;
+  width: 230px;
+  transform: translateX(170px);
+  background-color: #e17b77;
+  transition: transform 500ms ease-in-out;
+  display: grid;
+  grid-template-rows: 60px;
+  grid-template-columns: 60px 170px;
+  grid-template-areas: "icon text";
+}
+main .social_media .blog i {
+  grid-area: icon;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+main .social_media .blog a {
+  grid-area: text;
+  color: white;
+  text-decoration: none;
+}
+main .social_media .blog:hover {
+  transform: translateX(0);
+}
+main .social_media .twitter {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 60px;
+  width: 230px;
+  transform: translateX(170px);
+  background-color: #00aced;
+  transition: transform 500ms ease-in-out;
+  display: grid;
+  grid-template-rows: 60px;
+  grid-template-columns: 60px 170px;
+  grid-template-areas: "icon text";
+}
+main .social_media .twitter i {
+  grid-area: icon;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+main .social_media .twitter a {
+  grid-area: text;
+  color: white;
+  text-decoration: none;
+}
+main .social_media .twitter:hover {
+  transform: translateX(0);
+}
+main .social_media .linkedin {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 60px;
+  width: 230px;
+  transform: translateX(170px);
+  background-color: #007bb6;
+  transition: transform 500ms ease-in-out;
+  display: grid;
+  grid-template-rows: 60px;
+  grid-template-columns: 60px 170px;
+  grid-template-areas: "icon text";
+}
+main .social_media .linkedin i {
+  grid-area: icon;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+main .social_media .linkedin a {
+  grid-area: text;
+  color: white;
+  text-decoration: none;
+}
+main .social_media .linkedin:hover {
+  transform: translateX(0);
+}
+main .social_media .facebook {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 60px;
+  width: 230px;
+  transform: translateX(170px);
+  background-color: #3b5998;
+  transition: transform 500ms ease-in-out;
+  display: grid;
+  grid-template-rows: 60px;
+  grid-template-columns: 60px 170px;
+  grid-template-areas: "icon text";
+}
+main .social_media .facebook i {
+  grid-area: icon;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+main .social_media .facebook a {
+  grid-area: text;
+  color: white;
+  text-decoration: none;
+}
+main .social_media .facebook:hover {
+  transform: translateX(0);
+}
+main .social_media .github {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 60px;
+  width: 230px;
+  transform: translateX(170px);
+  background-color: #333;
+  transition: transform 500ms ease-in-out;
+  display: grid;
+  grid-template-rows: 60px;
+  grid-template-columns: 60px 170px;
+  grid-template-areas: "icon text";
+}
+main .social_media .github i {
+  grid-area: icon;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+main .social_media .github a {
+  grid-area: text;
+  color: white;
+  text-decoration: none;
+}
+main .social_media .github:hover {
+  transform: translateX(0);
+}
+@media (max-width: 1024px) {
+  main .portfoliogrid .container {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "one two" "three four" "five six" "seven ...";
+  }
+}
+@media (max-width: 768px) {
+  main .portfoliogrid .container {
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "one" "two" "three" "four" "five" "six" "seven";
+  }
+}/*# sourceMappingURL=asignment2.css.map */
